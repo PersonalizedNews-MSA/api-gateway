@@ -6,32 +6,7 @@ spring:
     gateway:
       mvc:
         routes:
-          - id: user
-            uri: http://user-service:8080
-            predicates:
-              - Path=/api/user/v1/**
-
-          - id: interest
-            uri: http://interest-service:8080
-            predicates:
-              - Path=/api/interests/v1/**
-
           - id: favorite
-            uri: http://favorite-service:8080
+            uri: http://k8s-favorite-service:8080
             predicates:
               - Path=/api/favorite/v1/**
-
-          - id: newsDisplay
-            uri: http://newsDisplay-service:8080
-            predicates:
-              - Path=/api/news/v1/**
-
-          - id: summary
-            uri: http://summary-service:8080
-            predicates:
-              - Path=/api/summary/v1/**
-
-          - id: search
-            uri: http://search-service:8080
-            predicates:
-              - Path=/api/search/v1/**
