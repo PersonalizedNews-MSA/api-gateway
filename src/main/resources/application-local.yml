@@ -10,13 +10,19 @@ spring:
             uri: http://k8s-favorite-service:8080
             predicates:
               - Path=/api/favorite/v1/**
+            filters:
+              - addAuthenticationHeader
 
           - id: interest
             uri: http://k8s-interest-service:8080
             predicates:
               - Path=/api/interests/v1/**
+            filters:
+              - addAuthenticationHeader
 
           - id: user
             uri: http://k8s-user-service:8080
             predicates:
               - Path=/api/user/v1/**
+            filters:
+              - addAuthenticationHeader
