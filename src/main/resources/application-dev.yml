@@ -1,17 +1,5 @@
-server:
-  port: 8080
-
 spring:
-  cloud:
-    gateway:
-      mvc:
-        routes:
-          - id: favorite
-            uri: http://k8s-favorite-service:8080
-            predicates:
-              - Path=/api/favorite/v1/**
-
-          - id: interest
-            uri: http://k8s-interest-service:8080
-            predicates:
-              - Path=/api/interests/v1/**
+  config:
+    import:
+      - file:/etc/config/application-dev.yml
+      - file:/etc/secret/application-secret.yml
