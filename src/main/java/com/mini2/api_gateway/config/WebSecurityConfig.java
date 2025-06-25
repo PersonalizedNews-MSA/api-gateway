@@ -50,7 +50,7 @@ public class WebSecurityConfig {
                                 .accessDeniedHandler(accessDeniedHandler))
                 .authorizeHttpRequests(registry -> registry
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers("/api/user/v1/auth/**").permitAll()
+                        .requestMatchers("/api/user/v1/auth/**", "/api/summary/v1/**").permitAll()
                         .anyRequest().authenticated()
                 );
         return http.build();

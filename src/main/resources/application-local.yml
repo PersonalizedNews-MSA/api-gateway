@@ -26,3 +26,17 @@ spring:
               - Path=/api/user/v1/**
             filters:
               - addAuthenticationHeader
+
+          - id: news
+            uri: http://k8s-news-service:8080
+            predicates:
+              - Path=/api/news/v1/**
+            filters:
+              - addAuthenticationHeader
+
+          - id: summary
+            uri: http://k8s-summary-service:8080
+            predicates:
+              - Path=/api/summary/v1/**
+            filters:
+              - addAuthenticationHeader
