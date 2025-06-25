@@ -52,9 +52,7 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/user/v1/auth/**").permitAll()
                         .anyRequest().authenticated()
-                )
-
-
+                );
         return http.build();
     }
 
